@@ -1,0 +1,313 @@
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#bg-video,
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.hero-overlay {
+    background: rgba(0,0,0,0.7);
+}
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+.glitch {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #aaa;
+}
+.btn-explore {
+    padding: 15px 30px;
+    border: 2px solid #00ffff;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+.btn-explore:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* --- GALLERY SECTION --- */
+.gallery {
+    padding: 80px 20px;
+    background: #111;
+}
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #00ffff;
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.filters button {
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.filters button:hover,
+.filters button.active {
+    background: #00ffff;
+    color: #000;
+}
+
+/* --- Isotope Masonry Grid Fix --- */
+.gallery-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.grid-sizer,
+.art-item {
+    width: 33.333%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.art-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    break-inside: avoid;
+    transition: transform 0.4s;
+}
+.art-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.art-item:hover img {
+    transform: scale(1.1);
+}
+.art-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    transition: bottom 0.3s;
+}
+.art-item:hover .art-info {
+    bottom: 0;
+}
+.btn-view {
+    padding: 8px 15px;
+    background: #ff00ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- FILTERING --- */
+.art-item.isotope-hidden {
+    display: none !important;
+}
+.isotope .art-item {
+    transform: translate3d(0,0,0) !important;
+    opacity: 1 !important;
+}
+
+.about {
+    padding: 80px 20px;
+    background: #111;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.skills ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.skills li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills i {
+    color: #ff00ff;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 20px;
+    background: #000;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #00ffff;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    background: #222;
+    border: 1px solid #00ffff;
+    color: #fff;
+}
+
+.btn-send {
+    padding: 15px;
+    background: #00ffff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-send:hover {
+    background: #ff00ff;
+    color: #fff;
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff00ff;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #111;
+    font-size: 0.9rem;
+}
+
+.easter-egg {
+    opacity: 0.3;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+/* đoạn sửa */
+/* Thêm vào file CSS của bạn */
+
+
+/* Fix lỗi Isotope khi filter */
+
+
+.isotope .art-item {
+    transform: translate3d(0, 0, 0) !important;
+    margin: 10px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 2.5rem;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .grid-sizer,
+    .art-item {
+        width: 100%;
+        float: none;
+    }
+}

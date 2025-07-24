@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUI VAN ANH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS riêng cho trang chi tiết */
+        .project-detail-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+        
+        .project-images {
+            flex: 1;
+        }
+        
+        .main-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-thumbs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .gallery-thumbs img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .gallery-thumbs img:hover {
+            border-color: #00ffff;
+        }
+        
+        .project-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-meta {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .meta-item {
+            margin-bottom: 15px;
+        }
+        
+        .meta-item h3 {
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+        .home_page{
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .project-detail-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="glitch">PROJECT <span id="typing-text">DETAIL</span></h1>
+            <a href="#project-content" class="btn-explore">VIEW PROJECT <i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+    <div class="home_page">
+        <a href="./index.html" class="">Xem thêm dự án</a>
+    </div>
+    <!-- Project Detail Content -->
+    <div id="project-content" class="project-detail-container">
+        <!-- Cột ảnh bên trái -->
+        <div class="project-images">
+            <img id="main-image" class="main-image" src="" alt="Project Image">
+            <div class="gallery-thumbs"></div>
+        </div>
+        
+        <!-- Cột thông tin bên phải -->
+        <div class="project-info">
+            <h1 class="project-title"></h1>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <h3>NĂM</h3>
+                    <p class="project-year"></p>
+                </div>
+                <div class="meta-item">
+                    <h3>KHÁCH HÀNG</h3>
+                    <p class="project-client"></p>
+                </div>
+                <div class="meta-item">
+                    <h3>VAI TRÒ</h3>
+                    <p class="project-role"></p>
+                </div>
+                <div class="meta-item">
+                    <h3>CÔNG CỤ</h3>
+                    <p class="project-tools"></p>
+                </div>
+            </div>
+            
+            <div class="project-description"></div>
+            
+         
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 BUI VAN ANH.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-artstation"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/projects.js"></script>
+    <script>
+        // Lấy ID dự án từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        // Hiển thị dự án
+        function loadProject() {
+            const project = projects[projectId];
+            
+            if (!project) {
+                document.body.innerHTML = '<h1>Dự án không tồn tại</h1>';
+                return;
+            }
+
+            // Điền thông tin
+            document.title = `${project.title} | BÙI VĂN ANH`;
+            document.querySelector('.project-title').textContent = project.title;
+            document.querySelector('.project-year').textContent = project.year;
+            document.querySelector('.project-client').textContent = project.client;
+            document.querySelector('.project-role').textContent = project.role;
+            document.querySelector('.project-tools').textContent = project.tools.join(', ');
+            document.querySelector('.project-description').innerHTML = project.description;
+            
+            // Hiển thị ảnh
+            if (project.images.length > 0) {
+                document.getElementById('main-image').src = project.images[0];
+                
+                const gallery = document.querySelector('.gallery-thumbs');
+                project.images.forEach(img => {
+                    gallery.innerHTML += `
+                        <img src="${img}" class="thumb" 
+                             onclick="document.getElementById('main-image').src='${img}'">
+                    `;
+                });
+            }
+            
+            // Link đến dự án tiếp theo
+            const nextProject = projects[project.nextProject];
+            if (nextProject) {
+                document.querySelector('.next-btn').href = `project.html?id=${nextProject.id}`;
+            }
+        }
+
+        // Chạy khi trang load
+        window.onload = loadProject;
+    </script>
+</body>
+</html>

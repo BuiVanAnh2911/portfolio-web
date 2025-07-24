@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | [BUI VAN ANH]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font chữ game -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <!-- <div class="loading-screen">
+        <div class="loading-bar"></div>
+        <p>LOADING UNIVERSE...</p>
+    </div> -->
+
+    
+
+    <!-- Hero Section (Fullscreen Video) -->
+    <section class="hero">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="glitch">I CREATE <span id="typing-text">WORLDS</span></h1>
+            <p class="subtitle">Họa Sĩ Ý Tưởng | Người xây dựng bối cảnh | Người thiết kế nhân vật</p>
+            <a href="#gallery" class="btn-explore">ENTER MY UNIVERSE <i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>ABOUT ME</h2>
+                <p>Xin chào! Tôi là <strong>BUI VAN ANH</strong>, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, natus.
+                </p>
+                <div class="skills">
+                    <h3>SKILLS</h3>
+                    <ul>
+                        <li><i class="fas fa-dragon"></i> Thiết kế nhân vật</li>
+                        <li><i class="fas fa-mountain"></i> Xây dựng bối cảnh</li>
+                        <li><i class="fas fa-cube"></i> Mô hình 3D (ZBrush/Blender)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/avatar.jpg" alt="My Avatar">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Dự án cá nhân</h2>
+        <div class="filters">
+            <button data-filter="all">ALL</button>
+            <button data-filter="character">CHARACTERS</button>
+            <button data-filter="environment">ENVIRONMENTS</button>
+
+        </div>
+        <div class="gallery-grid">
+        <div class="grid-sizer"></div>
+
+        <!-- Mỗi art-item bọc trong thẻ a -->
+        <a href="project-detail.html?id=cyber-samurai" class="art-item character">
+            <img src="assets/images/bg-breadcrumb.jpg" alt="Cyberpunk Samurai">
+            <div class="art-info">
+                <h3>CYBER SAMURAI</h3>
+                <p>Character design for "Neon Revolution" game</p>
+                <button class="btn-view">VIEW PROCESS</button>
+            </div>
+        </a>
+
+        <a href="project-detail.html?id=floating-city" class="art-item environment">
+            <img src="assets/images/bg-breadcrumb3.jpg" alt="Floating City">
+            <div class="art-info">
+                <h3>FLOATING CITY</h3>
+                <p>Environment concept - Sci-Fi RPG</p>
+                <button class="btn-view">VIEW PROCESS</button>
+            </div>
+        </a>
+
+         <a href="project-detail.html?id=floating-city" class="art-item environment">
+            <img src="assets/images/bg-breadcrumb3.jpg" alt="Floating City">
+            <div class="art-info">
+                <h3>FLOATING CITY</h3>
+                <p>Environment concept - Sci-Fi RPG</p>
+                <button class="btn-view">VIEW PROCESS</button>
+            </div>
+        </a>
+         <a href="project-detail.html?id=city" class="art-item environment">
+            <img src="assets/images/bg-breadcrumb3.jpg" alt="City">
+            <div class="art-info">
+                <h3>FLOATING CITY</h3>
+                <p>Environment concept - Sci-Fi RPG</p>
+                <button class="btn-view">VIEW PROCESS</button>
+            </div>
+        </a>
+
+        <!-- Thêm các dự án khác tương tự -->
+    </div>
+           
+        </div>
+
+
+    </section>
+
+    <!-- 3D Viewer Section -->
+    
+
+    <!-- About Me -->
+    
+    <!-- Contact -->
+    <section class="contact">
+        <h2>Liên Hệ Với Tôi</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="YOUR NAME" required>
+            <input type="email" placeholder="EMAIL" required>
+            <textarea placeholder="TELL ME ABOUT YOUR PROJECT..."></textarea>
+            <button type="submit" class="btn-send">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-artstation"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 BUI VAN ANH.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, sed?</p>
+        
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+     <script src="script.js"></script>
+</body>
+
+</html>
