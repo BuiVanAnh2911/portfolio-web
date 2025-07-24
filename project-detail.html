@@ -17,11 +17,11 @@
             padding: 0 20px;
             gap: 40px;
         }
-        
+
         .project-images {
             flex: 1;
         }
-        
+
         .main-image {
             width: 100%;
             max-height: 500px;
@@ -29,13 +29,13 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        
+
         .gallery-thumbs {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .gallery-thumbs img {
             width: 80px;
             height: 80px;
@@ -45,35 +45,36 @@
             border-radius: 4px;
             transition: all 0.3s;
         }
-        
+
         .gallery-thumbs img:hover {
             border-color: #00ffff;
         }
-        
+
         .project-info {
             flex: 1;
             min-width: 300px;
         }
-        
+
         .project-meta {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        
+
         .meta-item {
             margin-bottom: 15px;
         }
-        
+
         .meta-item h3 {
             color: #00ffff;
             margin-bottom: 5px;
         }
-        .home_page{
+
+        .home_page {
             text-align: center;
         }
-        
+
         @media (max-width: 768px) {
             .project-detail-container {
                 flex-direction: column;
@@ -104,11 +105,11 @@
             <img id="main-image" class="main-image" src="" alt="Project Image">
             <div class="gallery-thumbs"></div>
         </div>
-        
+
         <!-- Cột thông tin bên phải -->
         <div class="project-info">
             <h1 class="project-title"></h1>
-            
+
             <div class="project-meta">
                 <div class="meta-item">
                     <h3>NĂM</h3>
@@ -127,10 +128,10 @@
                     <p class="project-tools"></p>
                 </div>
             </div>
-            
+
             <div class="project-description"></div>
-            
-         
+
+
         </div>
     </div>
 
@@ -139,7 +140,7 @@
         <p>© 2025 BUI VAN ANH.</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-artstation"></i></a>
-              <a href="#"><i class="fab fa-discord"></i></a
+            <a href="#"><i class="fab fa-discord"></i></a> 
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
@@ -154,7 +155,7 @@
         // Hiển thị dự án
         function loadProject() {
             const project = projects[projectId];
-            
+
             if (!project) {
                 document.body.innerHTML = '<h1>Dự án không tồn tại</h1>';
                 return;
@@ -168,11 +169,11 @@
             document.querySelector('.project-role').textContent = project.role;
             document.querySelector('.project-tools').textContent = project.tools.join(', ');
             document.querySelector('.project-description').innerHTML = project.description;
-            
+
             // Hiển thị ảnh
             if (project.images.length > 0) {
                 document.getElementById('main-image').src = project.images[0];
-                
+
                 const gallery = document.querySelector('.gallery-thumbs');
                 project.images.forEach(img => {
                     gallery.innerHTML += `
@@ -181,7 +182,7 @@
                     `;
                 });
             }
-            
+
             // Link đến dự án tiếp theo
             const nextProject = projects[project.nextProject];
             if (nextProject) {
@@ -193,4 +194,5 @@
         window.onload = loadProject;
     </script>
 </body>
+
 </html>
