@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
 // Typing Effect
 const typed = new Typed('#typing-text', {
-    strings: ['WORLDS', 'CHARACTERS', 'STORIES', 'GAMES'],
+    strings: ['WORLDS', 'CHARACTERS', 'STORIES', 'ANIMATION'],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true
