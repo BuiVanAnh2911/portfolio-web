@@ -29,7 +29,6 @@ const projects = {
         sketches: ["assets/images/sketches/city-sketch.jpg"],
         nextProject: "neon-samurai"
     },
-
     "city": {
         id: "city",
         title: "CITY",
@@ -44,5 +43,6 @@ const projects = {
         sketches: ["assets/images/sketches/city-sketch.jpg"],
         nextProject: "neon-samurai"
     }
+
    
 };

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS riêng cho trang chi tiết */
+        
         .project-detail-container {
             display: flex;
             max-width: 1200px;
@@ -100,13 +100,13 @@
     </div>
     <!-- Project Detail Content -->
     <div id="project-content" class="project-detail-container">
-        <!-- Cột ảnh bên trái -->
+        
         <div class="project-images">
             <img id="main-image" class="main-image" src="" alt="Project Image">
             <div class="gallery-thumbs"></div>
         </div>
 
-        <!-- Cột thông tin bên phải -->
+        
         <div class="project-info">
             <h1 class="project-title"></h1>
 
@@ -148,7 +148,7 @@
     <!-- JavaScript -->
     <script src="js/projects.js"></script>
     <script>
-        // Lấy ID dự án từ URL
+        
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
 
@@ -161,7 +161,7 @@
                 return;
             }
 
-            // Điền thông tin
+            
             document.title = `${project.title} | BUI VAN ANH`;
             document.querySelector('.project-title').textContent = project.title;
             document.querySelector('.project-year').textContent = project.year;
@@ -183,14 +183,14 @@
                 });
             }
 
-            // Link đến dự án tiếp theo
+            
             const nextProject = projects[project.nextProject];
             if (nextProject) {
                 document.querySelector('.next-btn').href = `project.html?id=${nextProject.id}`;
             }
         }
 
-        // Chạy khi trang load
+        
         window.onload = loadProject;
     </script>
 </body>
