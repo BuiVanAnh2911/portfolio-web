@@ -87,6 +87,7 @@ const projects = {
             "assets/images/pr5-1.jpg",
             "assets/images/pr5-2.jpg",
             "assets/images/pr5-3.jpg",
+            "assets/images/pr5-4.jpg",
             
           
         ],
