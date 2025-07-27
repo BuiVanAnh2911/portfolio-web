@@ -312,4 +312,14 @@ footer {
         width: 100%;
         float: none;
     }
+     .filters {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filters button {
+        flex: 1 1 calc(50% - 10px);
+    }
 }
+
+
