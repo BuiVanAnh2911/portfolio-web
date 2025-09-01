@@ -117,6 +117,23 @@ const projects = {
         sketches: ["assets/images/sketches/neon-sketch.jpg"],
         nextProject: "floating-city"
     },
+     "nhan-vat": {
+        id: "nhan-vat",
+        title: "Character design",
+        year: "2021-2025",
+        client: "Null",
+        role: "Người thiết kế nhân vật , họa sĩ minh họa",
+        tools: ["Illustrator", "Photoshop", "Clip Studio Paint"],
+        description: "Thiết kế nhân vật lấy theo cảm hứng",
+        images: [
+          " assets/images/nhavat.jpg"
+            
+            
+          
+        ],
+        sketches: ["assets/images/sketches/neon-sketch.jpg"],
+        nextProject: "floating-city"
+    },
 
    
 };
